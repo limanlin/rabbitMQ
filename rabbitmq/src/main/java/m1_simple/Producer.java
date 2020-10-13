@@ -25,7 +25,7 @@ public class Producer {
 
         //发送消息
         c.basicPublish("","helloworld",null,//其他参数
-                "helloworld".getBytes());
+                "臭嗨".getBytes());
         System.out.println("消息已发送");
         c.close();
         cc.close();
