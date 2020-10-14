@@ -24,7 +24,9 @@ public class Consumer {
 
             @Override
             public void handle(String s, Delivery delivery) throws IOException {
-
+                byte[] m = delivery.getBody();
+                String msg = new String(m);
+                System.out.println("收到："+msg);
             }
         };
 
@@ -34,6 +36,6 @@ public class Consumer {
 
             }
         };
-        c.basicConsume(queue,deliverCallback,cancelCallback);
+        c.basicConsume(queue,true,deliverCallback,cancelCallback);
     }
 }
