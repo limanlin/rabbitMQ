@@ -13,6 +13,8 @@ public class Producer {
 
         Connect cn = new Connect();
         Channel c = cn.getChannel("topic_logs", BuiltinExchangeType.TOPIC);
+
+        //发送消息携带路由键
         while (true){
             System.out.println("请输入消息：");
             String msg = new Scanner(System.in).nextLine();
